@@ -1,0 +1,21 @@
+<html>
+
+{{post.title}} <br> {{post.author}} <br> {{post.content}} <br>{{post.publish_date}}
+
+<h1>Comments
+    <h1>
+        {% for comment in post.comments.all %}
+        <article>
+            {{comment.comment_author}} - {{comment.comment_content}}
+
+        </article>
+        {% endfor %}
+        <h2> Add a comment </h2>
+        <form method='post' action=''>
+            {% csrf_token %} {{form.as_table}}
+            <input type="submit" value="Add a comment">
+
+
+        </form>
+
+</html>
