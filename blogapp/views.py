@@ -101,7 +101,7 @@ def tag(request, a):
     # print(post)
     
     context = {
-        'tag':tags.post_set.all(),
+#         'tag':tags.post_set.all(),
         'post':post
         
      }
