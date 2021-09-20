@@ -1,12 +1,12 @@
-from django.shortcuts import render,redirect
-from blogapp.models import *
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import redirect, render
+
+from blogapp.models import *
+
 from .forms import CommentForm
-
-
 
 
 @login_required(login_url='login')
@@ -93,11 +93,17 @@ def register(request):
         return render(request,'register.html', context)
     
     
-def tag(request):
-    post = Post.objects.all()
-    print(dir(post))
+def tag(request, a):
+    tags=Tag.objects.get(id=a)
+    # print(tags)
+    
+    post=Post.objects.filter(tag=tags)
+    # print(post)
+    
     context = {
-        'tag':tag
+        'tag':tags.post_set.all(),
+        'post':post
+        
      }
     
     return render(request,"tag.html",context)

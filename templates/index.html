@@ -12,7 +12,7 @@
 
 <div class="container cta-100 ">
 
-    
+
     <div class="container">
         <div class="row blog">
 
@@ -30,17 +30,15 @@
                                 <div class="col-md-4">
 
                                     <div class="item-box-blog">
-                                      <div class="item-box-blog-heading">
-                                                <a href="#" tabindex="0">
-                                                    <h5>{{post.title}}</h5>
-                                                      {% for tag in post.tag.all %}
+                                        <div class="item-box-blog-heading">
+                                            <a href="#" tabindex="0">
+                                                <h5>{{post.title}}</h5>
+                                                {% for tag in post.tag.all %}
 
-                                                        <a href="/tag/{{tag.id}}/ " class="btn btn-primary">{{tag.tag_name}}</a>
+                                                <a href="/tag/{{tag.id}}/ " class="btn btn-primary">{{tag.tag_name}}</a> {% endfor %}
 
-                                                      {% endfor %}
-
-                                                </a>
-                                            </div>
+                                            </a>
+                                        </div>
                                         <div class="item-box-blog-image">
                                             <!--Date-->
                                             <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">{{post.publish_date}}</span> </div>
@@ -49,7 +47,7 @@
                                         </div>
                                         <div class="item-box-blog-body">
                                             <!--Heading-->
-                                          
+
                                             <!--Data-->
                                             <div class="item-box-blog-data" style="padding: px 15px;">
                                                 <p><i class="fa fa-user-o"></i> Admin, <i class="fa fa-comments-o"></i> Comments(3)</p>
@@ -58,36 +56,35 @@
                                             <div class="item-box-blog-text">
                                                 <p>{{post.content}}</p>
                                             </div>
-                    
-                                            </div>
+
+                                        </div>
                                         <div class="mt">
-                                            <a href="{% url "post_detail" post.id %} " tabindex="0 " class="btn bg-blue-ui white read ">read more</a> </div>
+                                            <a href="{% url "post_detail" post.id%} " tabindex="0 " class="btn bg-blue-ui white read ">read more</a> </div>
                                         <!--Read More Button-->
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4 ">
 
-                               
-                            </div>
-                           
-                            </div>
-                        </div>
-                        <!--.row-->
-                    </div>
-                    <!--.item-->
-                   
-                    <!--.item-->
-                </div>
-                <!--.carousel-inner-->
-            </div>
-            <!--.Carousel-->
 
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--.row-->
+                </div>
+                <!--.item-->
+
+                <!--.item-->
+            </div>
+            <!--.carousel-inner-->
         </div>
+        <!--.Carousel-->
 
     </div>
+
 </div>
 </div>
-                                                          <br>
-                                                          <br>
-{% endfor %}
+</div>
+<br>
+<br> {% endfor %}
